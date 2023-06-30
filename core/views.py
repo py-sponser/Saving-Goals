@@ -13,6 +13,7 @@ from django.contrib.auth import logout
 
 
 class LoginView(TokenObtainPairView):
+    """Overriding permissions of JWT obtain token (login)"""
     permission_classes = (IsNotAuthenticated, )
 
 
