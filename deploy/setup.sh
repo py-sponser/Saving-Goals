@@ -29,7 +29,7 @@ $PROJECT_BASE_PATH/env/bin/python $PROJECT_BASE_PATH/manage.py migrate
 cp $PROJECT_BASE_PATH/deploy/supervisor_savings.conf /etc/supervisor/conf.d/savings.com.conf
 supervisorctl reread
 supervisorctl update
-supervisorctl restart saadaty
+supervisorctl restart savings
 
 # Setup nginx to make our application accessible.
 cp $PROJECT_BASE_PATH/deploy/nginx_savings.conf /etc/nginx/sites-available/savings.com.conf
