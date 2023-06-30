@@ -1,0 +1,16 @@
+asgiref
+certifi
+charset-normalizer
+django
+django-cors-headers
+djangorestframework
+idna
+pillow
+pytz
+requests
+sqlparse
+ua-parser
+urllib3
+user-agents
+uuid
+psycopg2
