@@ -91,6 +91,8 @@ class LogoutView(APIView):
 
 
 class SavingsView(APIView):
+    permission_classes = (permissions.IsAuthenticated, )
+
     def get(self, request):
         goals = SavingGoal.objects.filter(user=request.user)
         goals_serializer = SavingGoalsGetterSerializer(goals, many=True)
