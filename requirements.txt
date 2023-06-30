@@ -4,7 +4,7 @@ charset-normalizer
 django
 django-cors-headers
 djangorestframework
-rest_framework_simplejwt
+djangorestframework-simplejwt
 idna
 pillow
 pytz
