@@ -1,5 +1,5 @@
 from django.urls import path
-from core.views import LoginView, SavingsView, SignUpView, LogoutView
+from core.views import LoginView, SavingsView, SignUpView, LogoutView, GetCSRFToken
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
 urlpatterns = [
@@ -9,4 +9,5 @@ urlpatterns = [
     path("savings/", SavingsView.as_view()),
     path("api/token/refresh/", TokenRefreshView.as_view()),
     path("api/token/verify/", TokenVerifyView.as_view()),
+    path("csrf/get/", GetCSRFToken.as_view()),
 ]

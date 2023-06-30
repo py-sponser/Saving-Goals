@@ -1,5 +1,5 @@
 from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 from rest_framework.views import Response, APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -12,6 +12,15 @@ from django.contrib.auth import logout
 # Create your views here.
 
 
+@method_decorator(ensure_csrf_cookie, name="dispatch")
+class GetCSRFToken(APIView):
+    permission_classes = (permissions.AllowAny, )
+
+    def get(self, request):
+        return Response({"success": "CSRF Cookie set."})
+
+
+@method_decorator(csrf_protect, name="dispatch")
 class LoginView(TokenObtainPairView):
     """Overriding permissions of JWT obtain token (login)"""
     permission_classes = (IsNotAuthenticated, )
